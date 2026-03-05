@@ -1,10 +1,9 @@
 export interface WifiPoint {
   id: string;
-  nombre: string;
+  programa: string;
   alcaldia: string;
-  colonia: string;
   latitud: number;
   longitud: number;
-  distancia?: number; // Para el cálculo de proximidad
-  score?: number;     // Para la recomendación
+  distancia?: number; // Para la IA
+  score?: number;     // Para la IA
 }

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "VCA-AER-001",
+    "programa": "Aeropuerto",
+    "latitud": 19.432707,
+    "longitud": -99.086743,
+    "alcaldia": "Venustiano Carranza"
+  },
+  {
+    "id": "VCA-TAP-002",
+    "programa": "Terminal TAPO",
+    "latitud": 19.429510,
+    "longitud": -99.112100,
+    "alcaldia": "Venustiano Carranza"
+  },
+  {
+    "id": "CUA-ROM-001",
+    "programa": "PILARES",
+    "latitud": 19.416100,
+    "longitud": -99.162200,
+    "alcaldia": "Cuauhtémoc"
+  },
+  {
+    "id": "CUA-CEN-002",
+    "programa": "Poste Mi C911e",
+    "latitud": 19.432500,
+    "longitud": -99.133200,
+    "alcaldia": "Cuauhtémoc"
+  },
+  {
+    "id": "CUA-CON-003",
+    "programa": "PILARES",
+    "latitud": 19.413200,
+    "longitud": -99.169500,
+    "alcaldia": "Cuauhtémoc"
+  },
+  {
+    "id": "MIH-POL-001",
+    "programa": "Poste Mi C911e",
+    "latitud": 19.432100,
+    "longitud": -99.191200,
+    "alcaldia": "Miguel Hidalgo"
+  },
+  {
+    "id": "MIH-CHA-002",
+    "programa": "Bosque de Chapultepec",
+    "latitud": 19.420500,
+    "longitud": -99.186300,
+    "alcaldia": "Miguel Hidalgo"
+  },
+  {
+    "id": "BJU-DEL-001",
+    "programa": "PILARES",
+    "latitud": 19.375200,
+    "longitud": -99.178300,
+    "alcaldia": "Benito Juárez"
+  },
+  {
+    "id": "BJU-NAR-002",
+    "programa": "Poste Mi C911e",
+    "latitud": 19.390100,
+    "longitud": -99.150200,
+    "alcaldia": "Benito Juárez"
+  },
+  {
+    "id": "COY-CEN-001",
+    "programa": "Poste Mi C911e",
+    "latitud": 19.349800,
+    "longitud": -99.162300,
+    "alcaldia": "Coyoacán"
+  },
+  {
+    "id": "COY-CU-002",
+    "programa": "PILARES",
+    "latitud": 19.328300,
+    "longitud": -99.182200,
+    "alcaldia": "Coyoacán"
+  },
+  {
+    "id": "TLA-CEN-001",
+    "programa": "Centro de Salud",
+    "latitud": 19.288200,
+    "longitud": -99.167300,
+    "alcaldia": "Tlalpan"
+  }
+]
