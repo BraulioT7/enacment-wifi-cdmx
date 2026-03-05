@@ -1,0 +1,12 @@
+.map-container {
+  height: 80vh; /* Ocupará el 80% del alto de la ventana */
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.map-frame {
+  height: 100%;
+  width: 100%;
+}

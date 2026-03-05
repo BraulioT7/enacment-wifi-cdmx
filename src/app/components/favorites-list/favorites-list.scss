@@ -1,0 +1,63 @@
+.favorites-container {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+
+  .fav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h4 { margin: 0; font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+    .badge { background: #0056b3; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; }
+  }
+}
+
+.fav-scroll-area {
+  max-height: 400px;
+  overflow-y: auto;
+  
+  .empty-state {
+    padding: 20px;
+    text-align: center;
+    color: #999;
+    font-size: 0.85rem;
+    border: 2px dashed #eee;
+    border-radius: 8px;
+  }
+}
+
+.fav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .fav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #0056b3;
+      background: #f8fbff;
+      transform: translateX(4px);
+    }
+
+    .fav-info {
+      display: flex;
+      flex-direction: column;
+      strong { font-size: 0.9rem; color: #333; }
+      small { font-size: 0.75rem; color: #777; }
+    }
+
+    .chevron { color: #ccc; font-size: 1.2rem; }
+  }
+}

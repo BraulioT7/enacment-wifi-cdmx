@@ -1,0 +1,29 @@
+<section class="favorites-container">
+  <header class="fav-header">
+    <h4>❤️ Mis Favoritos</h4>
+    <span class="badge">{{ favoritesService.favoriteIds().size }}</span>
+  </header>
+
+  <div class="fav-scroll-area">
+    @if (favoritesService.favoriteIds().size === 0) {
+      <div class="empty-state">
+        <p>Aún no has guardado puntos de conexión.</p>
+      </div>
+    } @else {
+      <ul class="fav-list">
+        @for (id of favoritesService.favoriteIds(); track id) {
+          @let punto = getFullPoint(id);
+          @if (punto) {
+            <li class="fav-item" (click)="selectFavorite(punto)">
+              <div class="fav-info">
+                <strong>{{ punto.programa }}</strong>
+                <small>{{ punto.alcaldia }}</small>
+              </div>
+              <span class="chevron">›</span>
+            </li>
+          }
+        }
+      </ul>
+    }
+  </div>
+</section>

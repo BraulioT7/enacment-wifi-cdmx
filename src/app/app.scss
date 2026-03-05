@@ -1,0 +1,72 @@
+/* Reseteo estricto del navegador */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Prohibido el scroll global */
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f4f7f6;
+}
+
+/* Arquitectura Grid */
+.app-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr; /* Sidebar de 380px, Mapa toma el resto */
+  height: 100vh;
+  width: 100vw;
+}
+
+.sidebar {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+  z-index: 10; /* Para la sombra sobre el mapa */
+  height: 100%;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: #0056b3;
+  color: white;
+
+  h1 { margin: 0; font-size: 1.4em; }
+  p { margin: 5px 0 0; font-size: 0.9em; opacity: 0.9; }
+}
+
+.sidebar-content {
+  padding: 20px;
+  overflow-y: auto; /* Solo la barra lateral hace scroll interno */
+  flex: 1;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: #e5e3df; /* Color de fondo mientras carga Leaflet */
+}
+
+/* Ajustes a los banners de estado */
+.status-banner {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  &.loading { background-color: #e2e3e5; color: #383d41; }
+  &.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+}
+
+/* Responsividad para móviles (Ej: Poco X4) */
+@media (max-width: 768px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50vh 50vh; /* Mitad mapa, mitad controles */
+  }
+  
+  /* En móviles, invertimos el orden visual: Mapa arriba, controles abajo */
+  .sidebar { order: 2; box-shadow: 0 -2px 15px rgba(0,0,0,0.1); }
+  .map-container { order: 1; }
+}

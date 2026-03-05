@@ -1,0 +1,61 @@
+@if (wifiService.selectedPoint(); as punto) {
+  <aside class="details-panel">
+    <header class="panel-header">
+      <h3>Detalles del Punto Wi-Fi</h3>
+      <button class="close-btn" (click)="closePanel()" title="Cerrar panel">✕</button>
+    </header>
+    
+    <div class="info-content">
+      <div class="data-row">
+        <span class="label">Programa:</span>
+        <span class="value">{{ punto.programa }}</span>
+      </div>
+      <div class="data-row">
+        <span class="label">Alcaldía:</span>
+        <span class="value">{{ punto.alcaldia }}</span>
+      </div>
+
+      @if (punto.distancia === undefined) {
+        <div style="padding: 10px; background: #fff3cd; color: #856404; font-size: 0.8em; border-radius: 4px; margin-top: 10px;">
+        ℹ️ Usa los filtros de proximidad para ver el Score de IA.
+        </div>
+      }
+
+      @if (punto.distancia !== undefined && punto.score !== undefined) {
+        <div class="ai-metrics">
+          <div class="metric">
+            <span class="label">📍 Distancia</span>
+            <span class="value">{{ punto.distancia | number:'1.1-2' }} km</span>
+          </div>
+          <div class="metric score">
+            <span class="label">⭐ Score IA</span>
+            <span class="value">{{ punto.score }}/100</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    @if (favoritesService.error()) {
+      <div class="error-banner">
+        ⚠️ {{ favoritesService.error() }}
+      </div>
+    }
+
+    @let isAlreadyFav = favoritesService.favoriteIds().has(punto.id);
+
+    <button 
+      class="fav-btn" 
+      [class.success]="isAlreadyFav"
+      [disabled]="isSaving() || isAlreadyFav"
+      (click)="toggleFavorite(punto)">
+      
+      @if (isSaving()) {
+        ⏳ Guardando...
+      } @else if (isAlreadyFav) {
+        ✅ Ya está en Favoritos
+      } @else {
+        ❤️ Añadir a Favoritos
+      }
+    </button>
+  </aside>
+}
